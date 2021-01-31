@@ -1,6 +1,6 @@
 # Nr2w
 
-Nr2w allows you to convert any integer number to its written form.
+Nr2w let you convert any integer number into its english written form.
 
 ## Usage
 
@@ -14,7 +14,7 @@ gem install nr2w
 ```
 require 'nr2w'
 ```
-### Call convert with the integer number as the method parameter
+### Call convert with any integer number as the method parameter
 
 ```
 Nr2w.convert(113) => "one hundred and thirteen"
@@ -22,4 +22,4 @@ Nr2w.convert(3123123) => "three million, one hundred and twenty three thousand, 
 ```
 ### That is it!
 
-Nr2w lets you convert any number you want (up to 30 digits) into it english written form.
+Nr2w lets you convert any integer you want (up to 30 digits) into its english written form.
