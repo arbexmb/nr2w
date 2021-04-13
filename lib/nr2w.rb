@@ -1,10 +1,19 @@
-require_relative './utils'
-include Utils
+# frozen_string_literal: true
+
+require "nr2w/utils"
 
 module Nr2w
-  @str = ''
+  @str = +""
 
   class << self
+    include Utils
+
+    def return_str
+      str = @str
+      @str = +""
+      str
+    end
+
     # Units and dozens
     def unit_dozen_hundred(hundreds_digits)
       dozens = hundreds_digits.slice(0, 2).reverse.join.to_i
@@ -30,42 +39,37 @@ module Nr2w
         unit_dozen_hundred(hundreds_digits)
       end
 
-      @str.prepend('minus ') if @negative
-      @str = 'zero' if value.zero?
+      @str.prepend("minus ") if @negative
+      @str = "zero" if value.zero?
 
-      puts assemble_str(@str)
-    end
-
-    def deal_with_errors(value)
-      raise 'Not an integer' unless value.is_a? Integer
-      raise 'Overflow' unless value.abs < 2**100
+      assemble_str(return_str)
     end
 
     def number_notation(index)
       name =
         case index
         when 3
-          ' thousand '
+          " thousand "
         when 6
-          ' million '
+          " million "
         when 9
-          ' billion '
+          " billion "
         when 12
-          ' trillion '
+          " trillion "
         when 15
-          ' quadrillion '
+          " quadrillion "
         when 18
-          ' quintillion '
+          " quintillion "
         when 21
-          ' sextillion '
+          " sextillion "
         when 24
-          ' septillion '
+          " septillion "
         when 27
-          ' octillion '
+          " octillion "
         when 30
-          ' nonillion '
+          " nonillion "
         else
-          ''
+          ""
         end
       @str.prepend name
     end

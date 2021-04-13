@@ -1,23 +1,21 @@
-Style/FrozenStringLiteralComment:
-  Enabled: false
+AllCops:
+  TargetRubyVersion: 2.6
+  NewCops: disable
+  Exclude:
+    - nr2w.gemspec
+    - bin/*
+    - spec/**/*
+
+Style/StringLiterals:
+  Enabled: true
+  EnforcedStyle: double_quotes
+
+Style/StringLiteralsInInterpolation:
+  Enabled: true
+  EnforcedStyle: double_quotes
+
+Layout/LineLength:
+  Max: 100
 
 Documentation:
-  Enabled: false
-
-Metrics/MethodLength:
-  Max: 30
-
-convention:Metrics/CyclomaticComplexity
-  Max: 11
-
-convention:Style/MixinUsage:
-  Enabled: false
-
-convention:Style/OptionalBooleanParameter:
-  Enabled: false
-
-convention:Gemspec/RequiredRubyVersion:
-  Enabled: false
-
-convention:Metrics/AbcSize:
   Enabled: false
