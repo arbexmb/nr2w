@@ -6,21 +6,21 @@ Nr2w let you convert any integer number into its english written form.
 
 ### Install the gem
 
-```
+```ruby
 gem install nr2w
 ```
 
 
 ### Require it to your application
 
-```
+```ruby
 require 'nr2w'
 ```
 
 
 ### Call convert with any integer number as the method parameter
 
-```
+```ruby
 Nr2w.convert(113)
 => "one hundred and thirteen"
 Nr2w.convert(3_123_123)
